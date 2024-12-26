@@ -16,11 +16,8 @@
 
 body {
     font-family: Roboto;
-}
-
-#__nuxt {
     @apply
-    w-full h-full
+    text-[1rem] lg:text-[1.4rem] 2xl:text-[2rem]
 }
 
 ::-webkit-scrollbar {

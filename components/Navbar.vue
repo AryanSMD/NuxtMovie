@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onClickOutside } from '#build/imports';
+import MenuBtn from './Buttons/MenuBtn.vue'
 
 const showMenu = ref <boolean> (false);
 const navbar = useTemplateRef('navbar');
@@ -29,10 +30,10 @@ onClickOutside(navbar, () => {
                 class="w-full h-full flex flex-col items-center justify-center
                     gap-2 md:gap-6 lg:gap-16 2xl:gap-20 relative mt-2 md:mt-0"
             >
-            <MenuLink :path="'/'" :icon="'fluent:home-32-regular'" :title="$t('Home')" />
-            <MenuLink :path="'/movies'" :icon="'fluent:movies-and-tv-16-regular'" :title="$t('Movies')" />
-            <MenuLink :path="'/series'" :icon="'fluent:filmstrip-play-32-regular'" :title="$t('Series')" />
-            <MenuLink :path="'/contact'" :icon="'fluent:call-28-regular'" :title="$t('Contact Me')" />
+            <MenuBtn :path="'/'" :icon="'fluent:home-32-regular'" :title="$t('Home')" />
+            <MenuBtn :path="'/movies'" :icon="'fluent:movies-and-tv-16-regular'" :title="$t('Movies')" />
+            <MenuBtn :path="'/series'" :icon="'fluent:filmstrip-play-32-regular'" :title="$t('Series')" />
+            <MenuBtn :path="'/contact'" :icon="'fluent:call-28-regular'" :title="$t('Contact Me')" />
             </div>
         </div>
     </div>
