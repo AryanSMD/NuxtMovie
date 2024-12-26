@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #00FF00;
+    --secondary: #0F0F0F;
+    --background: black;
+    --text: white;
+}
+
+* {
+    @apply
+    m-0 p-0 box-border select-none
+}
+
+body {
+    font-family: Roboto;
+}
+
+#__nuxt {
+    @apply
+    w-full h-full
+}
+
+::-webkit-scrollbar {
+    @apply
+    w-[2px]
+}
+::-webkit-scrollbar-track {
+    @apply
+    bg-black rounded-r-md overflow-hidden
+}
+::-webkit-scrollbar-thumb {
+    @apply
+    bg-green-600 rounded-md
+}
+.mini-scroll::-webkit-scrollbar {
+    @apply
+    !h-[2px]
+}
+
+.main {
+    @apply
+    w-full min-h-screen bg-background text-text flex justify-between overflow-hidden
+}
+
+.wrapper {
+    @apply
+    w-full
+}
+
+.auto-height {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all .5s;
+}
+.auto-height.show {
+    grid-template-rows: 1fr;
+}
+.auto-height div {
+    overflow: hidden;
+}
+
+.menu-icon-size {
+    @apply
+    w-[2.5rem] h-[2.5rem] md:w-[1.7rem] md:h-[1.7rem] 2xl:w-[2.3rem] 2xl:h-[2.3rem]
+}
