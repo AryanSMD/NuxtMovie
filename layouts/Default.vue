@@ -2,11 +2,14 @@
 </script>
 
 <template>
-    <Navbar />
-    <div class="wrapper">
-        <slot />            
+    <div class="main">
+        <!-- <NuxtLoadingIndicator /> -->
+        <Navbar />
+        <div class="wrapper">
+            <slot />            
+        </div>
+        <Footer />
     </div>
-    <Footer />
 </template>
 
 

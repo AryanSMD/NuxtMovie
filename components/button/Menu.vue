@@ -28,12 +28,12 @@ const props = defineProps<{
     transition-all duration-300
 }
 .link-active .icon {
-    filter: drop-shadow(0 0 5px var(--primary))
-        drop-shadow(0 0 10px var(--primary));
+    filter: drop-shadow(0 0 15px var(--primary))
+        drop-shadow(0 0 20px var(--primary));
 }
 .link-exact-active .icon {
-    filter: drop-shadow(0 0 5px var(--primary))
-        drop-shadow(0 0 10px var(--primary));
+    filter: drop-shadow(0 0 15px var(--primary))
+        drop-shadow(0 0 20px var(--primary));
 }
 .link-exact-active .icon {
     @apply

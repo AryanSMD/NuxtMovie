@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HomeBtn from './Buttons/HomeBtn.vue';
-
 const { t, locale } = useI18n();
 const style = `
 color: var(--primary);
@@ -18,15 +16,11 @@ const title = computed(() => {
 
 <template>
     <div 
-        class="flex max-w-[95%] flex-col justify-center items-center rounded-lg py-5 xl:py-10 px-5 absolute 
-            bg-black bg-opacity-80 backdrop-blur-[5px]"
+        class="flex w-full flex-col justify-center items-center py-5 px-5 absolute bg-gradient-to-r
+        from-transparent from-[1%] via-black to-transparent to-[99%] overflow-hidden"
     >
         <div class="title" v-html="title"></div>
         <div class="description">{{ t('description') }}</div>
-        <div class="flex justify-center items-center gap-20 mt-5">
-            <HomeBtn :icon="'fluent:movies-and-tv-16-regular'" :title="'Movies'" />
-            <HomeBtn :icon="'fluent:filmstrip-play-32-regular'" :title="'Series'" />
-        </div>
     </div>
 </template>
 

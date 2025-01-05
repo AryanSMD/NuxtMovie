@@ -4,9 +4,9 @@
 
 :root {
     --primary: #00FF00;
-    --secondary: #0F0F0F;
+    --secondary: #222222;
     --background: black;
-    --text: white;
+    --text: #F5F5F5;
 }
 
 * {
@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: Roboto;
+    /* font-family: Roboto; */
     @apply
     text-[1rem] lg:text-[1.4rem] 2xl:text-[2rem]
 }

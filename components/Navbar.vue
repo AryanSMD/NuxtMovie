@@ -1,9 +1,30 @@
 <script setup lang="ts">
 import { onClickOutside } from '#build/imports';
-import MenuBtn from './Buttons/MenuBtn.vue'
 
 const showMenu = ref <boolean> (false);
 const navbar = useTemplateRef('navbar');
+const btns = [
+    {
+        path: '/',
+        icon: 'fluent:home-32-filled',
+        title: 'home'
+    },
+    {
+        path: '/movies',
+        icon: 'fluent:movies-and-tv-16-filled',
+        title: 'movies'
+    },
+    {
+        path: '/series',
+        icon: 'fluent:filmstrip-play-32-filled',
+        title: 'series'
+    },
+    {
+        path: '/contact',
+        icon: 'fluent:call-28-filled',
+        title: 'contact'
+    }
+]
 
 onClickOutside(navbar, () => {
     showMenu.value = false;
@@ -14,10 +35,16 @@ onClickOutside(navbar, () => {
 <template>
     <div 
         ref="navbar"
-        class="w-full fixed md:h-screen md:w-[60px] 2xl:w-[80px] bg-black bg-opacity-80 flex flex-col justify-center 
-            items-center md:sticky top-0 left-0 z-[1000] backdrop-blur-[7px]"
+        class="w-full fixed md:h-screen md:w-[60px] 2xl:w-[80px] bg-black bg-opacity-80 flex flex-col 
+            justify-center items-center md:sticky top-0 left-0 z-[1000] backdrop-blur-[7px] 
+            md:border-r-[1px] border-secondary"
     >
-        <NuxtImg src="icon.png" class="absolute left-1 md:left-auto top-1 w-[2.5rem] h-[2.5rem] p-1" />
+        <!-- <NuxtImg 
+            src="/icon.png" 
+            width="40"
+            height="40"
+            class="absolute left-1 md:left-auto top-1 p-1"
+        /> -->
         <Icon name="fluent:text-align-justify-24-filled" 
             class="menu-icon-size self-end mt-1 mr-1 md:hidden cursor-pointer hover:text-primary
                 transition-colors duration-300"
@@ -28,12 +55,16 @@ onClickOutside(navbar, () => {
         >
             <div
                 class="w-full h-full flex flex-col items-center justify-center
-                    gap-2 md:gap-6 lg:gap-16 2xl:gap-20 relative mt-2 md:mt-0"
+                    gap-2 md:gap-6 lg:gap-16 2xl:gap-20 relative md:mt-0"
             >
-            <MenuBtn :path="'/'" :icon="'fluent:home-32-regular'" :title="$t('Home')" />
-            <MenuBtn :path="'/movies'" :icon="'fluent:movies-and-tv-16-regular'" :title="$t('Movies')" />
-            <MenuBtn :path="'/series'" :icon="'fluent:filmstrip-play-32-regular'" :title="$t('Series')" />
-            <MenuBtn :path="'/contact'" :icon="'fluent:call-28-regular'" :title="$t('Contact Me')" />
+            <ButtonMenu 
+                v-for="btn in btns"
+                :key="btn.path"
+                :path="btn.path" 
+                :icon="btn.icon" 
+                :title="$t(btn.title)"
+                @click="showMenu = false"
+            />
             </div>
         </div>
     </div>

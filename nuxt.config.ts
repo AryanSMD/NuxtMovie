@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  ssr: false,
   css: ['./assets/css/style.css'],
   postcss: {
     plugins: {
@@ -11,7 +10,15 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    format: ['webp']
+    provider: 'proxy',
+    providers: {
+      proxy: {
+        provider: 'ipx',
+        options: {
+          baseURL: '/api/img',
+        },
+      },
+    },
   },
   i18n: {
     detectBrowserLanguage: {
@@ -46,6 +53,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
   router: {
     options: {
@@ -53,4 +61,16 @@ export default defineNuxtConfig({
       linkExactActiveClass: "link-exact-active"
     }
   },
+  runtimeConfig: {
+    APIKey: process.env.APIKey,
+    public: {
+      BaseURL: process.env.BaseURL,
+      ImageURL: process.env.ImageURL,
+    }
+  },
+  icon: {
+    clientBundle: {
+      scan: true
+    }
+  }
 })

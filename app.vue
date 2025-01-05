@@ -16,10 +16,7 @@ useHead({
 
 
 <template>
-  <div class="main">
-    <!-- <NuxtLoadingIndicator /> -->
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

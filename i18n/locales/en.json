@@ -1,4 +1,8 @@
 {
     "welcome": "Welcome to",
-    "description": "This project made by Vue, Nuxt, Pinia and TypeScript. also uses the TMDB API but is not endorsed or certified by TMDB."
+    "description": "This project made by Vue, Nuxt, Pinia and TypeScript. also uses the TMDB API but is not endorsed or certified by TMDB.",
+    "home": "Home",
+    "movies": "Movies",
+    "series": "Series",
+    "contact": "Contact Me"
 }
