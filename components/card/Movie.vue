@@ -1,0 +1,29 @@
+<script setup lang="ts">
+const props = defineProps<{
+    movie: Movie
+}>()
+</script>
+
+
+<template>
+    <div 
+        class="h-full w-[80px] md:w-[100px] lg:w-[200px] flex flex-col cursor-pointer item 
+            transition-all duration-300"
+    >
+        <NuxtImg
+            :src="`/img${movie.poster_path}`"
+            class="w-full object-cover img"
+            loading="lazy"
+        />
+        <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.05rem] text-center">
+            {{ movie.title }}
+        </div>
+    </div>
+</template>
+
+
+<style scoped>
+.item:hover {
+    transform: scale(1.05);
+}
+</style>

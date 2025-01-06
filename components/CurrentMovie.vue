@@ -14,8 +14,8 @@ const props = defineProps<{
             <NuxtImg 
                 :src="`/img${ props.item?.backdrop_path }`"
                 format="webp"
-                quality="100"
-                class="w-full h-full object-cover"
+                loading="lazy"
+                class="w-full object-cover"
             />
         </div>
         <div 
@@ -23,12 +23,15 @@ const props = defineProps<{
                 bg-gradient-to-t lg:bg-gradient-to-r from-black via-black
                 via-[35%] to-transparent to-[90%] flex items-center"
         >
-            <div class="w-full lg:w-1/2 flex flex-col justify-center items-center px-2 lg:pl-8 lg:pr-0 gap-2 lg:gap-5">
+            <div 
+                class="w-full lg:w-1/2 h-full flex flex-col justify-center items-center px-2 lg:pl-8 
+                    lg:pr-0 gap-2 lg:gap-5"
+            >
                 <div 
-                    class="italic text-[1.4rem] sm:text-[1.8rem] md:text-[2rem] 
+                    class="text-[1.4rem] sm:text-[1.8rem] md:text-[2rem] 
                         lg:text-[2.4rem] 2xl:text-[3rem] lg:leading-[50px]"
                 >
-                    {{ props.item?.original_title ?? '' }}
+                    {{ props.item?.title ?? '' }}
                 </div>
                 <div class="w-full flex items-center gap-2 md:gap-5 text-white text-opacity-60">
                     <Stars :vote="props.item?.vote_average ?? 0" />
