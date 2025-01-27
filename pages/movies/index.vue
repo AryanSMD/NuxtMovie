@@ -42,32 +42,29 @@ function selectMovie(index: number) {
         <CurrentMovie
             :item="currentMovie!"
         />
-        <ItemsList :title="'Popular Movies'">
+        <List :title="'Popular Movies'">
             <CardMovie 
                 v-for="movie, index in movies"
                 :key="movie.id"
                 :movie="movie"
                 @click="selectMovie(index)"
             />
-        </ItemsList>
-        <ItemsList :title="'Popular Movies'">
+        </List>
+        <List :title="'Popular Movies'">
             <CardMovie 
                 v-for="movie, index in movies"
                 :key="movie.id"
                 :movie="movie"
                 @click="selectMovie(index)"
             />
-        </ItemsList>
-        <ItemsList :title="'Popular Movies'">
+        </List>
+        <List :title="'Popular Movies'">
             <CardMovie 
                 v-for="movie, index in movies"
                 :key="movie.id"
                 :movie="movie"
                 @click="selectMovie(index)"
             />
-        </ItemsList>
+        </List>
     </div>
 </template>
-
-
-<style scoped></style>

@@ -10,8 +10,13 @@ const props = defineProps<{
         class="h-full w-[80px] md:w-[100px] lg:w-[200px] flex flex-col cursor-pointer item 
             transition-all duration-300"
     >
-        <NuxtImg
+        <!-- <NuxtImg
             :src="`/img${movie.poster_path}`"
+            class="w-full object-cover img"
+            loading="lazy"
+        /> -->
+        <NuxtImg
+            :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
             class="w-full object-cover img"
             loading="lazy"
         />

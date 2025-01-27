@@ -39,12 +39,6 @@ onClickOutside(navbar, () => {
             justify-center items-center md:sticky top-0 left-0 z-[1000] backdrop-blur-[7px] 
             md:border-r-[1px] border-secondary"
     >
-        <!-- <NuxtImg 
-            src="/icon.png" 
-            width="40"
-            height="40"
-            class="absolute left-1 md:left-auto top-1 p-1"
-        /> -->
         <Icon name="fluent:text-align-justify-24-filled" 
             class="menu-icon-size self-end mt-1 mr-1 md:hidden cursor-pointer hover:text-primary
                 transition-colors duration-300"
@@ -69,6 +63,3 @@ onClickOutside(navbar, () => {
         </div>
     </div>
 </template>
-
-
-<style scoped></style>

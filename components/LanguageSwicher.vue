@@ -23,4 +23,9 @@ const language  = computed({
 </template>
 
 
-<style scoped></style>
+<style scoped>
+select {
+    @apply
+    bg-black
+}
+</style>

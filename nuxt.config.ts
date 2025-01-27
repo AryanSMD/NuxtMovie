@@ -35,11 +35,6 @@ export default defineNuxtConfig({
         file: 'en.json'
       },
       {
-        name: 'French',
-        code: 'fr',
-        file: 'fr.json'
-      },
-      {
         name: 'Persian',
         code: 'fa',
         dir: 'rtl',

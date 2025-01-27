@@ -21,21 +21,17 @@ const props = defineProps<{
 .item {
     @apply
     w-full gap-[5px] flex justify-start items-center md:justify-center
+    opacity-30 hover:opacity-100 transition-all duration-300
 }
-.icon {
+.link-active {
+    filter: drop-shadow(0 0 15px var(--primary))
+        drop-shadow(0 0 20px var(--primary));
     @apply
-    text-white opacity-50 hover:opacity-100 cursor-pointer 
-    transition-all duration-300
+    text-primary opacity-100
 }
-.link-active .icon {
+.link-exact-active {
     filter: drop-shadow(0 0 15px var(--primary))
         drop-shadow(0 0 20px var(--primary));
-}
-.link-exact-active .icon {
-    filter: drop-shadow(0 0 15px var(--primary))
-        drop-shadow(0 0 20px var(--primary));
-}
-.link-exact-active .icon {
     @apply
     text-primary opacity-100
 }

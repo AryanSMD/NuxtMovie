@@ -1,6 +1,3 @@
-<script setup lang="ts"></script>
-
-
 <template>
     <div 
         class="w-full fixed bottom-0 left-0 bg-black flex justify-center 
@@ -11,6 +8,3 @@
         <LanguageSwicher />
     </div>
 </template>
-
-
-<style scoped></style>

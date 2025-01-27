@@ -1,8 +1,0 @@
-{
-    "welcome": "Bienvenue à",
-    "description": "Ce projet réalisé par Vue, Nuxt, Pinia et TypeScript utilise également TMDB API mais n'est pas approuvé ou certifié par TMDB.",
-    "home": "Maison",
-    "movies": "Films",
-    "series": "Série",
-    "contact": "Contactez Moi"
-}
