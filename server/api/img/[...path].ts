@@ -1,4 +1,4 @@
-import { createIPX, ipxFSStorage, ipxHttpStorage, createIPXNodeServer} from 'ipx'
+import { createIPX, ipxFSStorage, ipxHttpStorage, createIPXNodeServer } from 'ipx'
 
 const ipx = createIPX({
     storage: ipxFSStorage({ dir: "./public" }),

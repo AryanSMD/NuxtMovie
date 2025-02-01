@@ -8,8 +8,8 @@ font-weight: bold;
 
 const title = computed(() => {
     return locale.value === 'fa' 
-        ?  `<span style="${style}">Nuxt Movie</span> ${t('welcome')}`
-        : `${t('welcome')} <span style="${style}">Nuxt Movie</span>`;
+        ?  `<span style="${ style }">Nuxt Movie</span> ${ t('welcome') }`
+        : `${ t('welcome') } <span style="${ style }">Nuxt Movie</span>`;
 })
 </script>
 

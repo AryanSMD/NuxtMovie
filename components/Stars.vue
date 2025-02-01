@@ -46,6 +46,9 @@ const regularStars = computed(() => {
             name="fluent:star-16-regular" 
             class="w-5 h-5" 
         />
+        <div class="text-[1rem] text-white text-opacity-60 ml-2">
+            <slot />
+        </div>
     </div>
 </template>
 

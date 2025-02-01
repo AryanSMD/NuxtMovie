@@ -2,12 +2,13 @@
 const movies = ref <Movie[]> ();
 const currentMovie = ref <Movie> ();
 onBeforeMount(async () => {
-    const result: any = await $fetch('/api/tmdb/movie/now_playing?language=en-US&page=1');
-    movies.value = await result.results.slice(0, 15);
-    currentMovie.value = movies.value![0];
+    const result = await getItemList('movie', 'now_playing?language=en-US', 1);
+    movies.value = result.results.slice(0, 15);
+    currentMovie.value = await getItem('movie', movies.value![0].id);
     timer.setTimer(1);
     timer.resetTimer(1);
 });
+
 
 const timer = (() => {
     let interval: NodeJS.Timeout;
@@ -24,14 +25,14 @@ const timer = (() => {
 
 function movieChanger(val: number) {
     let counter: number = val;
-    return setInterval(() => {
-        currentMovie.value = movies.value![counter];
+    return setInterval(async () => {
+        currentMovie.value = await getItem('movie', movies.value![counter].id);
         counter = (counter + 1) % movies.value!.length;
     }, 20000);
 }
 
-function selectMovie(index: number) {
-    currentMovie.value = movies.value![index];
+async function selectMovie(index: number) {
+    currentMovie.value = await getItem('movie', movies.value![index].id);
     timer.resetTimer(index);
 }
 </script>

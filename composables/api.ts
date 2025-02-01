@@ -1,0 +1,15 @@
+export async function fetchTMDB(url: string, params: object = {}): Promise<any> {
+    return await $fetch(`/api/tmdb/${ url }`, { params });
+}
+
+export function getItem(type: string, id: string) {
+    return fetchTMDB(`${ type }/${ id }`);
+}
+
+export function getItemList(type: string, query: string, page: number) {
+    return fetchTMDB(`${ type }/${ query }`, { page });
+}
+
+export function getGenres() {
+    return fetchTMDB(`genre/movie/list`);
+}
