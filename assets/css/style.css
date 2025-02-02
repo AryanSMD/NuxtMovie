@@ -17,7 +17,7 @@
 body {
     font-family: Roboto;
     @apply
-    text-[1rem] lg:text-[1.4rem] 2xl:text-[2rem]
+    text-[1rem] lg:text-[1.4rem] 2xl:text-[1.7rem]
 }
 
 ::-webkit-scrollbar {

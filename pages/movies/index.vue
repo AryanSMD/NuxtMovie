@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { categories } from '../../constants/categories'
+
 const movies = ref <Movie[]> ();
 const currentMovie = ref <Movie> ();
 onBeforeMount(async () => {
-    const result = await getItemList('movie', 'now_playing?language=en-US', 1);
+    const result = await getItemList('movie', 'now_playing', 1);
     movies.value = result.results.slice(0, 15);
     currentMovie.value = await getItem('movie', movies.value![0].id);
     timer.setTimer(1);
@@ -31,8 +33,8 @@ function movieChanger(val: number) {
     }, 20000);
 }
 
-async function selectMovie(index: number) {
-    currentMovie.value = await getItem('movie', movies.value![index].id);
+async function selectMovie(index: number, id: string) {
+    currentMovie.value = await getItem('movie', id);
     timer.resetTimer(index);
 }
 </script>
@@ -43,29 +45,10 @@ async function selectMovie(index: number) {
         <CurrentMovie
             :item="currentMovie!"
         />
-        <List :title="'Popular Movies'">
-            <CardMovie 
-                v-for="movie, index in movies"
-                :key="movie.id"
-                :movie="movie"
-                @click="selectMovie(index)"
-            />
-        </List>
-        <List :title="'Popular Movies'">
-            <CardMovie 
-                v-for="movie, index in movies"
-                :key="movie.id"
-                :movie="movie"
-                @click="selectMovie(index)"
-            />
-        </List>
-        <List :title="'Popular Movies'">
-            <CardMovie 
-                v-for="movie, index in movies"
-                :key="movie.id"
-                :movie="movie"
-                @click="selectMovie(index)"
-            />
-        </List>
+        <List 
+            v-for="list in categories.movie"
+            :list="list"
+            :select="selectMovie"
+        />
     </div>
 </template>

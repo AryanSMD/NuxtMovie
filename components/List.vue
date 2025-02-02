@@ -1,7 +1,15 @@
 <script setup lang="ts">
+const { t } = useI18n();
 const props = defineProps<{
-    title: string
-}>()
+    list: any,
+    select: Function
+}>();
+const movies = ref <Movie[]>();
+
+onMounted(async () => {
+    const result = await getItemList('movie', props.list.query, 1);
+    movies.value = result.results.slice(0, 15);
+})
 </script>
 
 
@@ -11,11 +19,19 @@ const props = defineProps<{
             overflow-y-hidden"
     >
         <div class="w-full flex items-center justify-between sticky top-0 left-0 z-[1]">
-            <div>{{ props.title }}</div>
-            <nuxt-link to="">More</nuxt-link>
+            <div>{{ t(props.list.title) }}</div>
+            <ButtonMore
+                :pathName="''"
+                :title="t('More')"
+            />
         </div>
         <div class="w-max flex items-center gap-3 scroll-smooth">
-            <slot></slot>
+            <Card
+                v-for="movie, index in movies"
+                :key="movie.id"
+                :item="movie"
+                @click="select(index, movie.id)"
+            />
         </div>
     </div>
 </template>

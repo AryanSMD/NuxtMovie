@@ -4,5 +4,11 @@
     "home": "Home",
     "movies": "Movies",
     "series": "Series",
-    "contact": "Contact Me"
+    "contact": "Contact Me",
+    "Now Playing Movies": "Now Playing Movies",
+    "Popular Movies": "Popular Movies",
+    "Top Rated Movies": "Top Rated Movies",
+    "Upcoming Movies": "Upcoming Movies",
+    "More": "More",
+    "Read More": "Read More"
 }

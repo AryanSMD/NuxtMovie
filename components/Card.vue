@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    movie: Movie
+    item: Movie
 }>()
 </script>
 
@@ -11,17 +11,17 @@ const props = defineProps<{
             transition-all duration-300"
     >
         <!-- <NuxtImg
-            :src="`/img${movie.poster_path}`"
+            :src="`/img${ props.item.poster_path }`"
             class="w-full object-cover img"
             loading="lazy"
         /> -->
         <NuxtImg
-            :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
+            :src="`https://image.tmdb.org/t/p/original/${ props.item.poster_path }`"
             class="w-full object-cover img"
             loading="lazy"
         />
         <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.05rem] text-center">
-            {{ movie.title }}
+            {{ props.item.title }}
         </div>
     </div>
 </template>

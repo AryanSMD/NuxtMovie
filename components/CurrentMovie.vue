@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n();
 const props = defineProps<{
     item: Movie
 }>()
@@ -38,7 +39,7 @@ const runtime = computed(() => {
                 via-[35%] to-transparent to-[90%] flex items-center"
         >
             <div
-                class="w-full lg:w-1/2 h-full flex flex-col justify-center items-center px-2 lg:pl-8 
+                class="w-full lg:w-1/2 h-full flex flex-col justify-center items-start px-2 lg:pl-8 
                     lg:pr-0 gap-2 lg:gap-5"
             >
                 <div
@@ -64,19 +65,15 @@ const runtime = computed(() => {
                     </div>
                 </div>
                 <div 
-                    class="text-[.7rem] sm:text-[.9rem] 2xl:text-[1rem] text-justify font-light max-h-[70px]
-                        lg:max-h-fit overflow-hidden"
+                    class="text-[.7rem] sm:text-[.9rem] 2xl:text-[1rem] text-justify font-light
+                        overflow-hidden line-clamp-2 lg:line-clamp-3"
                 >
                     {{ props.item?.overview ?? '' }}
                 </div>
-                <nuxt-link 
-                    to="" 
-                    class="text-white text-opacity-70 text-[1.5rem] self-start cursor-pointer 
-                        transition-colors duration-300 hover:text-primary rounded-md flex 
-                        justify-center items-center"
-                >
-                    Read More
-                </nuxt-link>
+                <ButtonMore
+                    :pathName="''"
+                    :title="t('Read More')"
+                />
             </div>
         </div>
 
