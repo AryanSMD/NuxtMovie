@@ -18,7 +18,6 @@ const props = defineProps<{
         <NuxtImg
             :src="`https://image.tmdb.org/t/p/original/${ props.item.poster_path }`"
             class="w-full object-cover img"
-            loading="lazy"
         />
         <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.05rem] text-center">
             {{ props.item.title }}

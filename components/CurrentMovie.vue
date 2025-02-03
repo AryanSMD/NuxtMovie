@@ -28,8 +28,6 @@ const runtime = computed(() => {
             /> -->
             <NuxtImg 
                 :src="`https://image.tmdb.org/t/p/original/${ props.item?.backdrop_path }`"
-                format="webp"
-                loading="lazy"
                 class="w-full object-cover"
             />
         </div>
@@ -71,7 +69,7 @@ const runtime = computed(() => {
                     {{ props.item?.overview ?? '' }}
                 </div>
                 <ButtonMore
-                    :pathName="''"
+                    :path="`movies/${ props.item?.id }`"
                     :title="t('Read More')"
                 />
             </div>

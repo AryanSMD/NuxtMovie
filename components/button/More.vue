@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    pathName: string,
+    path: object|string,
     title: string
 }>()
 </script>
@@ -8,9 +8,9 @@ const props = defineProps<{
 
 <template>
     <nuxt-link 
-        :to="{ name: props.pathName }" 
+        :to="props.path" 
         class="text-white text-opacity-70 transition-colors duration-300 
-            hover:text-primary flex justify-center items-center"
+            hover:text-primary flex justify-center items-center cursor-pointer"
     >
         {{ props.title }}
     </nuxt-link>

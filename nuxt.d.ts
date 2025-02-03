@@ -16,7 +16,6 @@ interface Movie {
   vote_average: number
   vote_count: number
   media_type?: MediaType
-  // details
   homepage?: string
   runtime?: number
   budget?: number
@@ -36,7 +35,6 @@ interface Movie {
     posters: Image[]
   }
   external_ids?: ExternalIds
-  // cast
   character?: string
 }
 
@@ -54,7 +52,6 @@ interface Person {
   character?: string
   credit_id: string
   order: number
-  // details
   also_known_as?: string[]
   birthday?: string
   place_of_birth?: string
@@ -100,4 +97,10 @@ interface Genre {
 
 interface Credits {
   cast: Media[]
+}
+
+interface Query {
+  type: string,
+  title: string,
+  query: string
 }

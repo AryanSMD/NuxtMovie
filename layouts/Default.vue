@@ -3,7 +3,7 @@
 
 <template>
     <div class="main">
-        <!-- <NuxtLoadingIndicator /> -->
+        <NuxtLoadingIndicator />
         <Navbar />
         <div class="wrapper">
             <slot />            

@@ -3,10 +3,12 @@ import { categories } from '../../constants/categories'
 
 const movies = ref <Movie[]> ();
 const currentMovie = ref <Movie> ();
+
+const result = await getItemList('movie', 'now_playing', 1);
+movies.value = result.results.slice(0, 15);
+currentMovie.value = await getItem('movie', movies.value![0].id);
+
 onBeforeMount(async () => {
-    const result = await getItemList('movie', 'now_playing', 1);
-    movies.value = result.results.slice(0, 15);
-    currentMovie.value = await getItem('movie', movies.value![0].id);
     timer.setTimer(1);
     timer.resetTimer(1);
 });
@@ -45,10 +47,11 @@ async function selectMovie(index: number, id: string) {
         <CurrentMovie
             :item="currentMovie!"
         />
-        <List 
-            v-for="list in categories.movie"
+        <LazyCarousel
+            v-for="list, index in categories.movie"
             :list="list"
             :select="selectMovie"
+            :class="index === categories.movie.length - 1 && 'mb-14'"
         />
     </div>
 </template>
