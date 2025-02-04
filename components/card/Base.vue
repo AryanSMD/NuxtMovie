@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
-    item: Movie
+    imgPath: string,
 }>()
 </script>
 
 
 <template>
     <div 
-        class="h-full w-[80px] md:w-[100px] lg:w-[200px] flex flex-col cursor-pointer item 
+        class="w-[80px] md:w-[100px] lg:w-[200px] cursor-pointer item 
             transition-all duration-300"
     >
         <!-- <NuxtImg
@@ -16,11 +16,10 @@ const props = defineProps<{
             loading="lazy"
         /> -->
         <NuxtImg
-            :src="`https://image.tmdb.org/t/p/original/${ props.item.poster_path }`"
-            class="w-full object-cover img"
+            :src="`https://image.tmdb.org/t/p/original/${ props.imgPath }`"
         />
-        <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.05rem] text-center">
-            {{ props.item.title }}
+        <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.2rem] text-center">
+            <slot />
         </div>
     </div>
 </template>

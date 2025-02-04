@@ -5,7 +5,7 @@ const movies = ref <Movie[]> ();
 const currentMovie = ref <Movie> ();
 
 const result = await getItemList('movie', 'now_playing', 1);
-movies.value = result.results.slice(0, 15);
+movies.value = result.results;
 currentMovie.value = await getItem('movie', movies.value![0].id);
 
 onBeforeMount(async () => {
@@ -47,7 +47,7 @@ async function selectMovie(index: number, id: string) {
         <CurrentMovie
             :item="currentMovie!"
         />
-        <LazyCarousel
+        <CarouselAutoQuery
             v-for="list, index in categories.movie"
             :list="list"
             :select="selectMovie"

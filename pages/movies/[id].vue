@@ -29,6 +29,16 @@ const movie: Movie = await getItem('movie', `${ route.params.id }`);
                         </div>
                     </div>
                 </div>
+                <CarouselBase>
+                    <template #title>Cast</template>
+                    <template #button></template>
+                    <LazyCardPerson
+                        v-for="cast in movie.credits?.cast"
+                        :key="cast.name"
+                        :item="cast"
+                        @click="()=>{}"
+                    />
+                </CarouselBase>
             </div>
         </div>
     </div>
