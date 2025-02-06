@@ -7,6 +7,6 @@ const props = defineProps<{
 
 <template>
     <CardBase :imgPath="props.item.poster_path">
-        <div class="t line-clamp-2">{{ props.item.title }}</div>
+        <div class="line-clamp-2">{{ props.item.title }}</div>
     </CardBase>
 </template>

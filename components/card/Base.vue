@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    imgPath: string,
+    imgPath: string|null,
 }>()
 </script>
 
@@ -11,13 +11,19 @@ const props = defineProps<{
             transition-all duration-300"
     >
         <!-- <NuxtImg
-            :src="`/img${ props.item.poster_path }`"
-            class="w-full object-cover img"
+            v-if="props.imgPath"
+            :src="`/img${ props.imgPath }`"
+            width="200"
+            height="300"
             loading="lazy"
         /> -->
         <NuxtImg
+            v-if="props.imgPath"
             :src="`https://image.tmdb.org/t/p/original/${ props.imgPath }`"
+            width="200"
+            height="300"
         />
+        <div v-else class="aspect-[2/3] bg-black"></div>
         <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.2rem] text-center">
             <slot />
         </div>
