@@ -3,14 +3,6 @@ const { t } = useI18n();
 const props = defineProps<{
     item: Movie
 }>()
-
-const runtime = computed(() => {
-    if (!props.item)
-        return '0h 00min';
-    const hour = Math.floor(props.item.runtime! / 60);
-    const minute = props.item.runtime! % 60;
-    return `${ hour }h ${ minute }min`;
-})
 </script>
 
 
@@ -51,7 +43,7 @@ const runtime = computed(() => {
                         {{ (props.item?.vote_average ?? 0).toFixed(1) }}
                     </Stars>
                     <div class="item">{{ props.item?.release_date?.split('-')[0] ?? "0000" }}</div>
-                    <div class="item">{{ runtime }}</div>
+                    <div class="item">{{ runtime(props.item.runtime) }}</div>
                 </div>
                 <div class="lables">
                     <div 
