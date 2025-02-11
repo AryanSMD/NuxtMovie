@@ -3,22 +3,21 @@ import { useRoute } from 'vue-router';
 
 const { t } = useI18n();
 const route = useRoute();
-const movie: Movie = await getItem('movie', `${ route.params.id }`);
-const recommendations = await getRecommendations(`${ route.params.id }`, 1);
+const person: Person = await getItem('person', `${ route.params.id }`);
 </script>
 
 
 <template>
     <NuxtImg
-        :src="`https://image.tmdb.org/t/p/original/${ movie?.backdrop_path }`"
-        class="fixed top-0 left-0 w-screen h-screen rounded-md"
+        src="/background.jpg"
+        class="fixed top-0 w-screen h-screen rounded-md brightness-[30%]"
     />
     <div class="w-full flex justify-center items-center py-10">
         <div class="w-[95%] sm:w-[90%] 2xl:w-[80%] bg-black bg-opacity-90 rounded-lg backdrop-blur-[1px] p-3 flex flex-col md:gap-10">
             <div class="w-full flex flex-col md:flex-row justify-between md:gap-5">
                 <div class="w-[40%] md:w-[30%] m-auto md:m-0">
                     <NuxtImg
-                        :src="`https://image.tmdb.org/t/p/original/${ movie?.poster_path }`"
+                        :src="`https://image.tmdb.org/t/p/original/${ person?.profile_path }`"
                         class="w-full aspect-[2/3]"
                     />
                 </div>
@@ -27,26 +26,16 @@ const recommendations = await getRecommendations(`${ route.params.id }`, 1);
                         class="w-full text-center text-[1rem] sm:text-[1.8rem] md:text-[2rem] 
                             lg:text-[2.4rem] 2xl:text-[3rem] md:mb-5"
                     >
-                        {{ movie.title }}
+                        {{ person.name }}
                     </div>
-                    <InfoMovie :movie="movie" />
+                    <InfoPerson :person="person" />
                 </div>
             </div>
             <CarouselBase>
-                <template #title>{{ t('Cast') }}</template>
-                <template #button></template>
-                <LazyCardPerson
-                    v-for="cast in movie.credits?.cast"
-                    :key="cast.name"
-                    :item="cast"
-                    @click="()=>{ $router.push(`/persons/${ cast.id }`) }"
-                />
-            </CarouselBase>
-            <CarouselBase>
-                <template #title>{{ t('More Like This') }}</template>
+                <template #title>{{ t('Known For') }}</template>
                 <template #button></template>
                 <LazyCardMovie
-                    v-for="item in recommendations.results"
+                    v-for="item in person.credits.cast"
                     :key="item.id"
                     :item="item"
                     @click="()=>{ $router.push(`/movies/${ item.id }`) }"

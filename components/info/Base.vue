@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n();
 const props = defineProps<{
     object: { key: string, value: string|number|undefined }[]
 }>()
@@ -7,7 +8,7 @@ const props = defineProps<{
 
 <template>
     <div class="w-full flex flex-col text-[1.2rem] md:px-5">
-        <div class="text-justify mb-10">
+        <div class="text-justify mb-10 whitespace-pre-wrap">
             <slot name="description" />
         </div>
         <div class="w-full grid grid-cols-2 gap-3">
@@ -16,7 +17,7 @@ const props = defineProps<{
                 :key="item.key"
                 class="w-full flex items-center gap-10 text-[1rem]"
             >
-                <div class="font-medium w-[70px]">{{ item.key }}</div>
+                <div class="font-medium w-[100px]">{{ t(item.key) }}</div>
                 <div class="opacity-70">{{ item.value }}</div>
             </div>
         </div>

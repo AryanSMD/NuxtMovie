@@ -51,6 +51,7 @@ interface Person {
   job?: string
   character?: string
   credit_id: string
+  credits: { cast: Movie[] }
   order: number
   also_known_as?: string[]
   birthday?: string

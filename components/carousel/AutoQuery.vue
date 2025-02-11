@@ -21,10 +21,10 @@ movies.value = result.results;
             />
         </template>
         <LazyCardMovie
-            v-for="movie, index in movies"
+            v-for="movie in movies"
             :key="movie.id"
             :item="movie"
-            @click="select(index, movie.id)"
+            @click="select(movie.id)"
         />
     </CarouselBase>
 </template>
