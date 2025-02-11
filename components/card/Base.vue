@@ -15,6 +15,7 @@ const props = defineProps<{
             :src="`/img${ props.imgPath }`"
             width="200"
             height="300"
+            class="aspect-[2/3]"
             loading="lazy"
         /> -->
         <NuxtImg
@@ -22,6 +23,7 @@ const props = defineProps<{
             :src="`https://image.tmdb.org/t/p/original/${ props.imgPath }`"
             width="200"
             height="300"
+            class="aspect-[2/3]"
         />
         <div v-else class="aspect-[2/3] bg-black"></div>
         <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.2rem] text-center">

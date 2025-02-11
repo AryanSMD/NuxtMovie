@@ -12,6 +12,6 @@ export function getItemList(type: string, query: string, page: number) {
     return fetchTMDB(`${ type }/${ query }`, { page });
 }
 
-export function getRecommendations(id: string, page: number) {
-    return fetchTMDB(`movie/${ id }/recommendations`, { page });
+export function getRecommendations(type: string, id: string, page: number) {
+    return fetchTMDB(`${ type }/${ id }/recommendations`, { page });
 }

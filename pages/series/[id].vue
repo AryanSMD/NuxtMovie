@@ -3,8 +3,8 @@ import { useRoute } from 'vue-router';
 
 const { t } = useI18n();
 const route = useRoute();
-const movie: Movie = await getItem('movie', `${ route.params.id }`);
-const recommendations = await getRecommendations('movie', `${ route.params.id }`, 1);
+const movie: Movie = await getItem('tv', `${ route.params.id }`);
+const recommendations = await getRecommendations('tv', `${ route.params.id }`, 1);
 </script>
 
 
@@ -23,11 +23,11 @@ const recommendations = await getRecommendations('movie', `${ route.params.id }`
                     />
                 </div>
                 <div class="w-full md:w-[70%]">
-                    <div 
+                    <div
                         class="w-full text-center text-[1rem] sm:text-[1.8rem] md:text-[2rem] 
                             lg:text-[2.4rem] 2xl:text-[3rem] md:mb-5"
                     >
-                        {{ movie.title }}
+                        {{ movie.title || movie.name }}
                     </div>
                     <InfoMovie :movie="movie" />
                 </div>
@@ -49,7 +49,7 @@ const recommendations = await getRecommendations('movie', `${ route.params.id }`
                     v-for="item in recommendations.results"
                     :key="item.id"
                     :item="item"
-                    @click="()=>{ $router.push(`/movies/${ item.id }`) }"
+                    @click="()=>{ $router.push(`/series/${ item.id }`) }"
                 />
             </CarouselBase>
         </div>

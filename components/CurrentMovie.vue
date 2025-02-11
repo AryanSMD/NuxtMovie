@@ -36,7 +36,7 @@ const props = defineProps<{
                     class="text-[1.4rem] sm:text-[1.8rem] md:text-[2rem] 
                         lg:text-[2.4rem] 2xl:text-[3rem] lg:leading-[50px]"
                 >
-                    {{ props.item?.title ?? '' }}
+                    {{ props.item?.title || props.item.name }}
                 </div>
                 <div class="lables">
                     <Stars :vote="props.item?.vote_average ?? 0">

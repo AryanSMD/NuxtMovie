@@ -6,8 +6,8 @@ export const categories = {
         { type: 'movie', title: 'Upcoming Movies', query: 'upcoming' },
     ],
     tv: <Query[]> [
-        { type: 'tv', title: 'Popular TV Shows', query: 'popular' },
-        { type: 'tv', title: 'Top Rated TV Shows', query: 'top_rated' },
-        { type: 'tv', title: 'TV Shows Airing Today', query: 'airing_today' },
+        { type: 'tv', title: 'Popular Series', query: 'popular' },
+        { type: 'tv', title: 'Top Rated Series', query: 'top_rated' },
+        { type: 'tv', title: 'Series Shows Airing Today', query: 'airing_today' },
     ],
 }
