@@ -1,6 +1,5 @@
 import languages from "~/constants/languages";
 
-
 export function runtime(time: number|undefined) {
     if (!time)
         return '0h 00min';
@@ -16,6 +15,10 @@ export function formatLang(iso: string) {
     return iso
 }
 
-export function formatCurrency (val: number) {
+export function formatCurrency(val: number) {
     return `$${ val }`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+export function voteAverage(val: number) {
+    return (val ?? 0).toFixed(1);
 }

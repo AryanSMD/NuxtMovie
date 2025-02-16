@@ -5,6 +5,7 @@ const props = defineProps<{
 
 const info = [
     { key: 'Released', value: props.movie.release_date?.replaceAll('-', '/') || '' },
+    { key: 'Vote', value: voteAverage(props.movie.vote_average) || '' },
     { key: 'Director', value: props.movie.credits?.crew.filter(e => e.job === 'Director')[0]?.name || ''},
     { key: 'Revenue', value: formatCurrency(props.movie.revenue!) || '' },
     { key: 'Status', value: props.movie.status || '' },

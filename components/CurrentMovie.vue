@@ -40,7 +40,7 @@ const props = defineProps<{
                 </div>
                 <div class="lables">
                     <Stars :vote="props.item?.vote_average ?? 0">
-                        {{ (props.item?.vote_average ?? 0).toFixed(1) }}
+                        {{ voteAverage(props.item?.vote_average) }}
                     </Stars>
                     <div class="item">{{ props.item?.release_date?.split('-')[0] ?? "0000" }}</div>
                     <div class="item">{{ runtime(props.item.runtime) }}</div>

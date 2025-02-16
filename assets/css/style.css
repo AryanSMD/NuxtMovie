@@ -22,15 +22,15 @@ body {
 
 ::-webkit-scrollbar {
     @apply
-    w-[3px] h-[3px]
+    w-[10px] h-[12px]
 }
 ::-webkit-scrollbar-track {
     @apply
-    bg-black rounded-r-md overflow-hidden
+    bg-[#292929] overflow-hidden
 }
 ::-webkit-scrollbar-thumb {
     @apply
-    bg-text rounded-md
+    bg-[#666666]
 }
 
 .main {

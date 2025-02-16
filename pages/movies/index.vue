@@ -26,15 +26,15 @@ const timer = (() => {
 
 
 <template>
-    <div class="w-full flex flex-col">
         <CurrentMovie
             :item="currentMovie!"
         />
-        <CarouselAutoQuery
-            v-for="list, index in categories.movie"
-            :list="list"
-            :select="(id: number) => { $router.push(`/movies/${ id }`); }"
-            :class="index === categories.movie.length - 1 && 'mb-14'"
-        />
-    </div>
+        <div class="w-full flex flex-col gap-3 lg:gap-7">
+            <CarouselAutoQuery
+                v-for="list, index in categories.movie"
+                :list="list"
+                :select="(id: number) => { $router.push(`/movies/${ id }`); }"
+                :class="index === categories.movie.length - 1 && 'mb-14'"
+            />
+        </div>
 </template>

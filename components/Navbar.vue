@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { onClickOutside } from '#build/imports';
-
-const showMenu = ref <boolean> (false);
-const navbar = useTemplateRef('navbar');
 const btns = [
     {
         path: '/',
@@ -25,41 +21,21 @@ const btns = [
         title: 'contact'
     }
 ]
-
-onClickOutside(navbar, () => {
-    showMenu.value = false;
-})
 </script>
 
 
 <template>
     <div 
-        ref="navbar"
-        class="w-full fixed md:h-screen md:w-[60px] 2xl:w-[80px] bg-black bg-opacity-80 flex flex-col 
-            justify-center items-center md:sticky top-0 left-0 z-[1000] backdrop-blur-[7px] 
-            md:border-r-[1px] border-secondary"
+        class="w-full h-[50px] md:h-screen fixed md:sticky bottom-0 md:top-0 left-0 md:w-[60px] 2xl:w-[80px] 
+            bg-black flex flex-row md:flex-col justify-center items-center z-[1000]
+            border-t-[1px] md:border-t-0 md:border-r-[1px] border-secondary md:gap-6 lg:gap-16 2xl:gap-20"
     >
-        <Icon name="fluent:text-align-justify-24-filled" 
-            class="menu-icon-size self-end mt-1 mr-1 md:hidden cursor-pointer hover:text-primary
-                transition-colors duration-300"
-            @click="showMenu = !showMenu"
-        />
-        <div class="auto-height h-full w-full md:!grid-rows-1 md:py-10"
-            :class="showMenu && 'show py-2'"
-        >
-            <div
-                class="w-full h-full flex flex-col items-center justify-center
-                    gap-2 md:gap-6 lg:gap-16 2xl:gap-20 relative md:mt-0"
-            >
-            <ButtonMenu 
-                v-for="btn in btns"
-                :key="btn.path"
-                :path="btn.path" 
-                :icon="btn.icon" 
-                :title="$t(btn.title)"
-                @click="showMenu = false"
-            />
-            </div>
-        </div>
+    <ButtonMenu 
+        v-for="btn in btns"
+        :key="btn.path"
+        :path="btn.path" 
+        :icon="btn.icon" 
+        :title="$t(btn.title)"
+    />
     </div>
 </template>
