@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const props = defineProps<{
-    item: Movie
+    item: Movie,
+    type: string
 }>()
 </script>
 
@@ -61,7 +62,7 @@ const props = defineProps<{
                     {{ props.item?.overview ?? '' }}
                 </div>
                 <ButtonMore
-                    :path="`movies/${ props.item?.id }`"
+                    :path="`${ props.type }/${ props.item?.id }`"
                     :title="t('Read More')"
                 />
             </div>

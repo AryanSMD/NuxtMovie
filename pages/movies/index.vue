@@ -28,6 +28,7 @@ const timer = (() => {
 <template>
         <CurrentMovie
             :item="currentMovie!"
+            :type="'movies'"
         />
         <div class="w-full flex flex-col gap-3 lg:gap-7">
             <CarouselAutoQuery

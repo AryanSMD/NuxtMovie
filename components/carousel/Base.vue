@@ -24,7 +24,7 @@ function scrollRight() {
         </div>
         <div class="relative">
             <div class="overflow-y-hidden" ref="scrollEl">
-                <div class="w-max h-full flex gap-4 scroll-smooth px-3 mb-[5px]">
+                <div class="w-max flex gap-4 scroll-smooth px-3 mb-[5px]">
                     <slot />
                 </div>
             </div>

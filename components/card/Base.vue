@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
     <div 
-        class="w-[80px] md:w-[100px] lg:w-[200px] cursor-pointer item 
+        class="w-60 aspect-[10/16] cursor-pointer item 
             transition-all duration-300"
     >
         <!-- <NuxtImg
@@ -21,11 +21,11 @@ const props = defineProps<{
         <NuxtImg
             v-if="props.imgPath"
             :src="`https://image.tmdb.org/t/p/original/${ props.imgPath }`"
-            width="200"
-            height="300"
-            class="aspect-[2/3]"
+            width="400"
+            height="600"
+            class="aspect-[4/6]"
         />
-        <div v-else class="aspect-[2/3] bg-black"></div>
+        <div v-else class="aspect-[4/6] bg-black"></div>
         <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.2rem] text-center">
             <slot />
         </div>

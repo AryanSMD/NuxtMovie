@@ -29,12 +29,13 @@ const timer = (() => {
     <div class="w-full flex flex-col">
         <CurrentMovie
             :item="currentMovie!"
+            :type="'series'"
         />
         <CarouselAutoQuery
             v-for="list, index in categories.tv"
             :list="list"
             :select="(id: number) => { $router.push(`/series/${ id }`); }"
-            :class="index === categories.movie.length - 1 && 'mb-14'"
+            :class="index === categories.tv.length - 1 && 'mb-14'"
         />
     </div>
 </template>

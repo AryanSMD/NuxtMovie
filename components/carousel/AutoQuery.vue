@@ -16,7 +16,7 @@ movies.value = result.results;
         <template #title>{{ t(props.list.title) }}</template>
         <template #button>
             <ButtonMore
-                :path="''"
+                :path="`/more/${ props.list.type } ${ props.list.query }`"
                 :title="t('More')"
             />
         </template>
