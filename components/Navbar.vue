@@ -6,12 +6,12 @@ const btns = [
         title: 'home'
     },
     {
-        path: '/movies',
+        path: '/movie',
         icon: 'fluent:movies-and-tv-16-filled',
         title: 'movies'
     },
     {
-        path: '/series',
+        path: '/tv',
         icon: 'fluent:filmstrip-play-32-filled',
         title: 'series'
     },

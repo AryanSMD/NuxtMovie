@@ -3,7 +3,8 @@ const isLoading = ref<boolean>(false);
 const counter = ref<number>(1);
 const movies = ref<Movie[]>([]);
 const route = useRoute();
-const query = (route.params.id as string).split(' ');
+const query = computed(() => route.params.query as string);
+const type = computed(() => route.params.type as 'movie'||'tv');
 
 onMounted(async () => {
     await getMoviePerPage();
@@ -12,7 +13,7 @@ onMounted(async () => {
 async function getMoviePerPage() {
     try {
         isLoading.value = true;
-        const result =  await getItemList(query[0], query[1], counter.value);
+        const result =  await getItemList(type.value, query.value, counter.value);
         movies.value.push(...result.results);
     }
     finally {
@@ -34,7 +35,7 @@ async function nextPage() {
             :key="movie.id"
             :item="movie"
             class="w-auto"
-            @click="$router.push(`/movies/${ movie.id }`)"
+            @click="$router.push(`/${ type }/${ movie.id }`)"
         />
     </div>
     <div class="w-full flex justify-center mt-5 mb-14">

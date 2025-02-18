@@ -31,14 +31,14 @@ const person: Person = await getItem('person', `${ route.params.id }`);
                     <InfoPerson :person="person" />
                 </div>
             </div>
-            <CarouselBase>
+            <CarouselBase v-if="person.credits.cast.length">
                 <template #title>{{ t('Known For') }}</template>
                 <template #button></template>
                 <LazyCardMovie
                     v-for="item in person.credits.cast"
                     :key="item.id"
                     :item="item"
-                    @click="()=>{ $router.push(`/movies/${ item.id }`) }"
+                    @click="$router.push(`/movie/${ item.id }`)"
                 />
             </CarouselBase>
         </div>
