@@ -30,7 +30,7 @@ const btns = [
             bg-black flex flex-row md:flex-col justify-center items-center z-[1000]
             border-t-[1px] md:border-t-0 md:border-r-[1px] border-secondary md:gap-6 lg:gap-16 2xl:gap-20"
     >
-    <ButtonMenu 
+    <ButtonNav
         v-for="btn in btns"
         :key="btn.path"
         :path="btn.path" 

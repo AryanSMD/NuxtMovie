@@ -21,6 +21,10 @@ const title = computed(() => {
     >
         <div class="title" v-html="title"></div>
         <div class="description">{{ t('description') }}</div>
+        <div class="w-full flex items-center justify-center gap-4">
+            <nuxt-link click="btn" to="/movies">Movies</nuxt-link>
+            <nuxt-link click="btn" to="/series">Series</nuxt-link>
+        </div>
     </div>
 </template>
 

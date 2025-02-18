@@ -8,7 +8,7 @@ const props = defineProps<{
 
 
 <template>
-    <nuxt-link :to="props.path" class="item">
+    <nuxt-link :to="props.path" class="item" :title="props.title">
         <div class="icon menu-icon-size">
             <Icon :name="props.icon" class="w-full h-full" />            
         </div>
