@@ -15,10 +15,13 @@ movies.value = result.results;
     <CarouselBase>
         <template #title>{{ t(props.list.title) }}</template>
         <template #button>
-            <ButtonMore
-                :path="`${ props.list.type }/category/${ props.list.query }`"
-                :title="t('More')"
-            />
+            <nuxt-link 
+                :to="`${ props.list.type }/category/${ props.list.query }`" 
+                class="text-white text-opacity-70 transition-colors duration-300 
+                    hover:text-primary flex justify-center items-center cursor-pointer"
+            >
+                {{ t('More') }}
+            </nuxt-link>
         </template>
         <LazyCardMovie
             v-for="movie in movies"
