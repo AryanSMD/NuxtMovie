@@ -17,7 +17,7 @@ const title = computed(() => {
 <template>
     <div 
         class="flex w-full flex-col justify-center items-center py-5 px-5 absolute bg-gradient-to-r
-        from-transparent from-[1%] via-black to-transparent to-[99%] overflow-hidden"
+        from-transparent from-[1%] via-black to-transparent to-[99%] overflow-hidden backdrop-blur-[2px]"
     >
         <div class="title" v-html="title"></div>
         <div class="description">{{ t('description') }}</div>

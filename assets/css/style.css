@@ -4,8 +4,8 @@
 
 :root {
     --primary: #00FF00;
-    --secondary: #222222;
-    --background: black;
+    --secondary: #666666;
+    --tertiary: #292929;
     --text: #F5F5F5;
 }
 
@@ -20,22 +20,28 @@ body {
     text-[1rem] lg:text-[1.4rem] 2xl:text-[1.7rem]
 }
 
+input {
+    @apply
+    w-full bg-transparent outline-none border-none text-text transition-all text-[1.3rem]
+    duration-300 cursor-pointer px-2 placeholder:text-secondary
+}
+
 ::-webkit-scrollbar {
     @apply
     w-[10px] h-[12px]
 }
 ::-webkit-scrollbar-track {
     @apply
-    bg-[#292929] overflow-hidden
+    bg-tertiary overflow-hidden
 }
 ::-webkit-scrollbar-thumb {
     @apply
-    bg-[#666666]
+    bg-secondary
 }
 
 .main {
     @apply
-    w-full min-h-screen bg-background text-text flex 
+    w-full min-h-screen bg-black text-text flex 
 }
 
 .wrapper {

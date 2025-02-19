@@ -10,7 +10,7 @@ const props = defineProps<{
 <template>
     <div 
         class="w-full relative aspect-[1/1] md:aspect-[3/2] lg:aspect-[25/7] overflow-hidden 
-            border-b-[1px] border-secondary cursor-pointer"
+            border-b-[1px] border-tertiary cursor-pointer"
         @click="$router.push(`/${ props.type }/${ props.item?.id }`)"
     >
         <div class="w-full lg:w-3/4 h-full absolute top-0 right-0">
