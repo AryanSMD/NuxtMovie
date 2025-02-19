@@ -10,20 +10,14 @@ const props = defineProps<{
         class="w-60 aspect-[10/16] cursor-pointer item 
             transition-all duration-300"
     >
-        <!-- <NuxtImg
-            v-if="props.imgPath"
-            :src="`/img${ props.imgPath }`"
-            width="200"
-            height="300"
-            class="aspect-[2/3]"
-            loading="lazy"
-        /> -->
         <NuxtImg
             v-if="props.imgPath"
-            :src="`https://image.tmdb.org/t/p/original/${ props.imgPath }`"
+            :src="`/img${ props.imgPath }`"
+            format="webp"
             width="400"
             height="600"
             class="aspect-[4/6]"
+            loading="lazy"
         />
         <div v-else class="aspect-[4/6] bg-tertiary flex justify-center items-center">
             <Icon name="fluent:question-circle-24-regular" class="w-10 h-10 text-secondary" />

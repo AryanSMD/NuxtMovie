@@ -26,7 +26,7 @@ async function loadMovie() {
             :key="movie.id"
             :item="movie"
             class="w-auto"
-            @click="$router.push(`/${ props.type }/${ movie.id }`)"
+            @click="$router.push(`/${ movie.media_type ?? props.type }/${ movie.id }`)"
         />
     </div>
     <div v-if="movies.length" class="w-full flex justify-center my-[70px]">

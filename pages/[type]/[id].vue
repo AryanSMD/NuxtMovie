@@ -13,7 +13,7 @@ const recommendations = await getRecommendations(type.value, `${ route.params.id
 
 <template>
     <NuxtImg
-        :src="`https://image.tmdb.org/t/p/original${ movie?.backdrop_path }`"
+        :src="`/img${ movie?.backdrop_path }`"
         class="fixed top-0 left-0 w-screen h-screen rounded-md"
     />
     <div class="w-full flex justify-center items-center py-10">
@@ -21,7 +21,7 @@ const recommendations = await getRecommendations(type.value, `${ route.params.id
             <div class="w-full flex flex-col md:flex-row justify-between md:gap-5">
                 <div class="w-[40%] md:w-[30%] m-auto md:m-0">
                     <NuxtImg
-                        :src="`https://image.tmdb.org/t/p/original${ movie?.poster_path }`"
+                        :src="`/img${ movie?.poster_path }`"
                         class="w-full aspect-[2/3]"
                     />
                 </div>

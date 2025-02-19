@@ -17,7 +17,7 @@ const person: Person = await getItem('person', `${ route.params.id }`);
             <div class="w-full flex flex-col md:flex-row justify-between md:gap-5">
                 <div class="w-[40%] md:w-[30%] m-auto md:m-0">
                     <NuxtImg
-                        :src="`https://image.tmdb.org/t/p/original/${ person?.profile_path }`"
+                        :src="`/img${ person?.profile_path }`"
                         class="w-full aspect-[2/3]"
                     />
                 </div>

@@ -14,14 +14,10 @@ const props = defineProps<{
         @click="$router.push(`/${ props.type }/${ props.item?.id }`)"
     >
         <div class="w-full lg:w-3/4 h-full absolute top-0 right-0">
-            <!-- <NuxtImg 
+            <NuxtImg 
                 :src="`/img${ props.item?.backdrop_path }`"
                 format="webp"
                 loading="lazy"
-                class="w-full object-cover"
-            /> -->
-            <NuxtImg 
-                :src="`https://image.tmdb.org/t/p/original/${ props.item?.backdrop_path }`"
                 class="w-full object-cover"
             />
         </div>
