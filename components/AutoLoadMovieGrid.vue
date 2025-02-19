@@ -2,9 +2,21 @@
 const props = defineProps<{
     movies: Movie[],
     type: 'movie'|'tv',
-    func: Function,
-    isLoading: boolean
-}>()
+    fetch: (page: number) => Promise<void>,
+}>();
+const isLoading = ref<boolean>(false);
+const counter = ref<number>(1);
+
+async function loadMovie() {
+    isLoading.value = true;
+    try {
+        counter.value++;
+        await props.fetch(counter.value);
+    }
+    finally {
+        isLoading.value = false
+    }
+}
 </script>
 
 <template>
@@ -17,17 +29,10 @@ const props = defineProps<{
             @click="$router.push(`/${ props.type }/${ movie.id }`)"
         />
     </div>
-    <div class="w-full flex justify-center mt-5 mb-14">
-        <button 
-            class="hover:text-primary transition-all duration-300 disabled:cursor-default"
-            @click="props.func()" 
-            :disabled="props.isLoading"
-        >
-            <div v-if="!props.isLoading" class="flex items-center gap-1">
-                <Icon name="fluent:add-circle-24-regular" class="icon" />
-                More
-            </div>
-            <Icon v-else name="svg-spinners:bars-rotate-fade" class="icon" />
+    <div v-if="movies.length" class="w-full flex justify-center my-[70px]">
+        <Icon v-if="isLoading" name="svg-spinners:bars-rotate-fade" class="icon" />
+        <button v-else @click="loadMovie">
+            <Icon name="fluent:add-circle-24-regular" class="icon" />
         </button>
     </div>
 </template>
@@ -36,6 +41,10 @@ const props = defineProps<{
 <style scoped>
 .icon {
     @apply
-    w-8 h-8
+    w-8 lg:w-12 h-8 lg:h-12
+}
+button {
+    @apply
+    transition-all duration-300 text-text hover:text-primary animate-pulse
 }
 </style>

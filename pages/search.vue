@@ -1,29 +1,19 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const isLoading = ref<boolean>(false);
-const counter = ref<number>(1);
 const movies = ref<Movie[]>([]);
 const query = ref<string>('');
-const type = 'movie';
 
 async function search() {
-    try {
-        isLoading.value = true;
-        const result =  await searchMovies(query.value);
-        movies.value = [...result.results];
-    }
-    finally {
-        isLoading.value = false
-    }
+    const result = await searchMovies(query.value);
+    movies.value = [...result.results];
+}
+
+async function nextPage(page: number) {
+    const result = await searchMovies(query.value, page);
+    movies.value.push(...result.results);
 }
 
 const throttledSearch = useDebounceFn(search, 300);
-
-async function nextPage() {
-    counter.value++;
-    const result =  await searchMovies(query.value, counter.value);
-    movies.value.push(...result.results);
-}
 
 watch(
     () => query.value, 
@@ -46,8 +36,7 @@ watch(
     </div>
     <AutoLoadMovieGrid 
         :movies="movies"
-        :type="type"
-        :func="nextPage"
-        :isLoading="isLoading"
+        :type="'movie'"
+        :fetch="nextPage"
     />
 </template>
