@@ -1,6 +1,7 @@
-# Nuxt Minimal Starter
+# Nuxt Movie
+<img src="./public/review.jpg">
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### This project made by ***Vue***, ***Nuxt***, ***TypeScript***, ***Nuxt Image*** and ***i18n***. also uses the TMDB API but is not endorsed or certified by TMDB.
 
 ## Setup
 
