@@ -1,4 +1,4 @@
-# Nuxt Movie
+# ***Nuxt Movie***
 <img src="./public/review.jpg">
 
 ### This project made by ***Vue***, ***Nuxt***, ***TypeScript***, ***Nuxt Image*** and ***i18n***. also uses the TMDB API but is not endorsed or certified by TMDB.
@@ -38,39 +38,3 @@ yarn dev
 # bun
 bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
