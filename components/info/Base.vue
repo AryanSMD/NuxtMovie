@@ -11,7 +11,7 @@ const props = defineProps<{
         <div class="text-justify mb-10 whitespace-pre-wrap">
             <slot name="description" />
         </div>
-        <div class="w-full grid grid-cols-2 gap-3">
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div 
                 v-for="item in props.object"
                 :key="item.key"

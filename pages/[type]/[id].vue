@@ -27,8 +27,8 @@ const recommendations = await getRecommendations(type.value, `${ route.params.id
                 </div>
                 <div class="w-full md:w-[70%]">
                     <div 
-                        class="w-full text-center text-[1rem] sm:text-[1.8rem] md:text-[2rem] 
-                            lg:text-[2.4rem] 2xl:text-[3rem] md:mb-5"
+                        class="w-full text-center text-[1.4rem] sm:text-[1.8rem] md:text-[2rem] 
+                            lg:text-[2.4rem] 2xl:text-[3rem] md:mb-5 font-medium"
                     >
                         {{ movie.title ?? movie.name }}
                     </div>
