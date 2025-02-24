@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     movies: Movie[],
-    type: 'movie'|'tv',
+    type: Media,
     fetch: (page: number) => Promise<void>,
 }>();
 const isLoading = ref<boolean>(false);

@@ -4,7 +4,7 @@ import { categories } from '../../constants/categories'
 definePageMeta({
   key: route => route.fullPath,
   validate: ({ params }) => {
-    return ['movie', 'tv'].includes(params.type as 'movie'|'tv')
+    return ['movie', 'tv'].includes(params.type as Media)
   },
 })
 
@@ -12,7 +12,7 @@ const route = useRoute();
 const movies = ref <Movie[]> ();
 const currentMovie = ref <Movie> ();
 
-const type = computed(() => route.params.type as 'movie'|'tv');
+const type = computed(() => route.params.type as Media);
 
 const result = await getItemList(type.value, categories[type.value][0].query, 1);
 movies.value = result.results;

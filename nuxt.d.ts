@@ -1,3 +1,5 @@
+type Media = 'movie'|'tv';
+
 interface Movie {
   adult: boolean
   backdrop_path: string

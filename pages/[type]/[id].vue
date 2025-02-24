@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 const { t } = useI18n();
 const route = useRoute();
 
-const type = computed(() => route.params.type as 'movie'|'tv');
+const type = computed(() => route.params.type as Media);
 
 const movie: Movie = await getItem(type.value, `${ route.params.id }`);
 const recommendations = await getRecommendations(type.value, `${ route.params.id }`, 1);
@@ -30,7 +30,7 @@ const recommendations = await getRecommendations(type.value, `${ route.params.id
                         class="w-full text-center text-[1rem] sm:text-[1.8rem] md:text-[2rem] 
                             lg:text-[2.4rem] 2xl:text-[3rem] md:mb-5"
                     >
-                        {{ movie.title }}
+                        {{ movie.title ?? movie.name }}
                     </div>
                     <InfoMovie :movie="movie" />
                 </div>
