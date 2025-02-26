@@ -8,10 +8,7 @@ const person: Person = await getItem('person', `${ route.params.id }`);
 
 
 <template>
-    <NuxtImg
-        src="/background.jpg"
-        class="fixed top-0 w-screen h-screen rounded-md brightness-[30%]"
-    />
+    <div class="fixed top-0 w-screen h-screen rounded-md gradient"></div>
     <div class="w-full flex justify-center items-center py-10">
         <div class="w-[95%] sm:w-[90%] 2xl:w-[80%] bg-black bg-opacity-90 rounded-lg backdrop-blur-[1px] p-3 flex flex-col md:gap-10">
             <div class="w-full flex flex-col md:flex-row justify-between md:gap-5">

@@ -65,3 +65,18 @@ input {
     @apply
     w-[2.5rem] h-[2.5rem] md:w-[1.7rem] md:h-[1.7rem] 2xl:w-[2.3rem] 2xl:h-[2.3rem]
 }
+
+.gradient {
+    background: linear-gradient(-45deg,
+        black 0%,
+        rgb(38,5,5) 18%, 
+        rgb(81,16,11) 25%, 
+        rgb(126,63,50) 32%, 
+        rgb(137,53,47) 38%,
+        rgb(101,65,137) 50%, 
+        rgb(24,78,202) 55%, 
+        rgb(6,38,114) 65%, 
+        rgb(5,26,75) 75%,
+        black 100%
+    );
+}

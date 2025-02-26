@@ -22,7 +22,7 @@ const props = defineProps<{
         <div v-else class="aspect-[4/6] bg-tertiary flex justify-center items-center">
             <Icon name="fluent:question-circle-24-regular" class="w-10 h-10 text-secondary" />
         </div>
-        <div class="text-[.6rem] md:text-[.8rem] lg:text-[1.2rem] text-center">
+        <div class="text-[1.1rem] lg:text-[1.3rem] text-center">
             <slot />
         </div>
     </div>

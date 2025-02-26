@@ -7,7 +7,7 @@ const props = defineProps<{
 
 
 <template>
-    <div class="w-full flex flex-col text-[1.2rem] md:px-5">
+    <div class="w-full flex flex-col text-[.9rem] md:text-[1rem] lg:text-[1.2rem] md:px-5">
         <div class="text-justify mb-10 whitespace-pre-wrap">
             <slot name="description" />
         </div>
@@ -15,7 +15,7 @@ const props = defineProps<{
             <div 
                 v-for="item in props.object"
                 :key="item.key"
-                class="w-full flex items-center gap-10 text-[1rem]"
+                class="w-full flex items-center gap-10"
             >
                 <div class="font-medium w-[100px]">{{ t(item.key) }}</div>
                 <div class="opacity-70">{{ item.value }}</div>

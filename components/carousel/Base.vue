@@ -18,7 +18,7 @@ function scrollRight() {
 
 <template>
     <div class="w-full overflow-x-auto overflow-y-hidden">
-        <div class="w-full flex items-center justify-between sticky top-0 left-0 z-[1] px-3 py-2">
+        <div class="w-full flex items-center justify-between sticky top-0 left-0 z-[1] px-3 py-2 text-[1rem] md:text-[1.5rem] lg:text-[1.7rem]">
             <slot name="title" />
             <slot name="button" />
         </div>
