@@ -10,14 +10,9 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    provider: 'proxy',
-    providers: {
-      proxy: {
-        provider: 'ipx',
-        options: {
-          baseURL: '/api/img',
-        },
-      },
+    domains: ['image.tmdb.org'],
+    alias: {
+      '/img': 'https://image.tmdb.org/t/p/original'
     },
   },
   i18n: {
