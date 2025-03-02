@@ -1,6 +1,6 @@
 export async function fetchTMDB(url: string, params: Record<string, string|number|undefined> = {}) {
     if (!params.language) {
-        params.language = useI18n().locale.value;
+        params.language = unref(useNuxtApp().$i18n.locale);
     }
     return await $fetch(`/api/tmdb/${ url }`, { params });
 }
