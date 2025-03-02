@@ -26,9 +26,9 @@ const btns = [
 
 <template>
     <div 
-        class="w-full h-[50px] lg:h-screen fixed lg:sticky bottom-0 lg:top-0 left-0 lg:w-[60px] 2xl:w-[80px] 
-            bg-black flex flex-row lg:flex-col justify-center items-center z-[1000] border-t-[1px] 
-            lg:border-t-0 lg:border-r-[1px] border-tertiary lg:gap-6 lg:gap-16 2xl:gap-20"
+        class="w-full h-[50px] lg:h-screen fixed lg:sticky bottom-6 lg:top-0 left-0 lg:w-[60px] 2xl:w-[80px] 
+            bg-black flex flex-row lg:flex-col justify-center items-center z-[1001] border-t-[1px] 
+            lg:border-t-0 lg:border-r-[1px] border-tertiary lg:gap-16 2xl:gap-20"
     >
     <ButtonNav
         v-for="btn in btns"

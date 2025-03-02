@@ -1,4 +1,7 @@
-export async function fetchTMDB(url: string, params: object = {}): Promise<any> {
+export async function fetchTMDB(url: string, params: Record<string, string|number|undefined> = {}) {
+    if (!params.language) {
+        params.language = useI18n().locale.value;
+    }
     return await $fetch(`/api/tmdb/${ url }`, { params });
 }
 
