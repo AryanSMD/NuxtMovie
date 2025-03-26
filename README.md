@@ -1,7 +1,7 @@
 # ***Nuxt Movie***
 <img src="./public/review.jpg">
 
-### This project built with ***Nuxt***, ***Pinia***, ***TypeScript***, ***Nuxt Image*** and ***i18n***. also uses the TMDB API but is not endorsed or certified by TMDB.
+### This project built with ***Nuxt***, ***Pinia***, ***TypeScript***, ***Nuxt-Image*** and ***i18n***. also uses the ***TMDB*** but is not certified by it.
 
 ### 🍿 Live preview: https://nuxt-movie-teal.vercel.app/
 ## Setup

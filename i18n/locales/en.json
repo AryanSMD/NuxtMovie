@@ -1,6 +1,6 @@
 {
     "welcome": "Welcome to",
-    "description": "Nuxt Movie is a movie discovery app created by AryanSMD. it uses Nuxt, Pinia, TypeScript, and TMDB for seamless discovery and exploration. this project uses the TMDB API but is not certified by it.",
+    "description": "Nuxt Movie is a movie discovery app created by AryanSMD. it uses Nuxt, Pinia, TypeScript, Nuxt-Image, I18n and TMDB for seamless discovery and exploration. this project is not certified by TMDB.",
     "home": "Home",
     "movies": "Movies",
     "series": "Series",
