@@ -1,24 +1,16 @@
 <script setup lang="ts">
 const { t, locale } = useI18n();
-const style = `
-color: var(--primary);
-font-style: italic;
-font-weight: bold;
-`
-
-const title = computed(() => {
-    return locale.value === 'fa' 
-        ?  `<span style="${ style }">Nuxt Movie</span> ${ t('welcome') }`
-        : `${ t('welcome') } <span style="${ style }">Nuxt Movie</span>`;
-})
 </script>
 
 
 <template>
     <div class="label">
-        <div class="title" v-html="title"></div>
-        <div class="description">{{ t('description') }}</div>
-        <div class="w-full flex items-center justify-center gap-[60px] lg:gap-[80px] mt-2 mb-4 lg:mb-[30px]">
+        <div class="title" :dir="locale === 'fa' ? 'rtl': 'ltr'">
+            {{ t('welcome') }}
+            <span class="text-primary italic font-bold">Nuxt Movie</span>
+        </div>
+        <div class="description" :dir="locale === 'fa' ? 'rtl': 'ltr'">{{ t('description') }}</div>
+        <div class="w-full flex items-center justify-center gap-[60px] lg:gap-[80px] mt-3 mb-4 lg:mb-[30px]">
             <ButtonNeon 
                 :path="'/movie'"
                 :title="t('movies')"
@@ -40,10 +32,11 @@ const title = computed(() => {
 }
 .title {
     @apply
-    text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[2rem] 2xl:text-[3.5rem] text-center
+    text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] 2xl:text-[3.5rem] text-center
 }
 .description {
     @apply
-    text-justify w-fit sm:w-[500px] lg:w-[700px]
+    text-justify w-fit sm:w-[500px] lg:w-[700px] text-[.8rem] sm:text-[1rem] md:text-[1.2rem] 
+    lg:text-[1.3rem] 2xl:text-[1.5rem]
 }
 </style>
