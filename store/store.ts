@@ -1,15 +1,12 @@
 interface States {
-    test: string
+    title: string
 }
 
 export const useStore = defineStore('useStore', {
     state: (): States => ({
-        test: 'test'
+        title: 'Nuxt Movie'
     }),
-    actions: {
-
-    },
     getters: {
-        getTest: state => state.test,
+        getTitle: state => state.title,
     }
 })
