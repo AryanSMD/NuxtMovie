@@ -1,6 +1,6 @@
-type Media = 'movie'|'tv';
+type TMedia = 'movie'|'tv';
 
-interface Movie {
+type TMovie = {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
@@ -17,30 +17,30 @@ interface Movie {
   video: boolean
   vote_average: number
   vote_count: number
-  media_type?: MediaType
+  media_type?: TMedia
   homepage?: string
   runtime?: number
   budget?: number
   revenue?: number
   status?: string
-  genres?: Genre[]
+  genres?: TGenre[]
   production_companies?: any[]
   videos?: {
-    results: Video[]
+    results: TVideo[]
   }
   credits?: {
-    cast: Person[]
-    crew: Person[]
+    cast: TPerson[]
+    crew: TPerson[]
   }
   images?: {
-    backdrops: Image[]
-    posters: Image[]
+    backdrops: TImage[]
+    posters: TImage[]
   }
-  external_ids?: ExternalIds
+  external_ids?: TExternalIds
   character?: string
 }
 
-interface Person {
+type TPerson = {
   adult: boolean
   gender: number
   id: number
@@ -53,24 +53,24 @@ interface Person {
   job?: string
   character?: string
   credit_id: string
-  credits: { cast: Movie[] }
+  credits: { cast: TMovie[] }
   order: number
   also_known_as?: string[]
   birthday?: string
   place_of_birth?: string
   homepage?: string
   biography?: string
-  external_ids?: ExternalIds
+  external_ids?: TExternalIds
   combined_credits?: {
-    cast?: Media[]
-    crew?: Media[]
+    cast?: TMedia[]
+    crew?: TMedia[]
   }
   images?: {
-    profiles: Image[]
+    profiles: TImage[]
   }
 }
 
-interface Video {
+type TVideo = {
   iso_639_1: string
   iso_3166_1: string
   name: string
@@ -83,7 +83,7 @@ interface Video {
   id: string
 }
 
-interface Image {
+type TImage = {
   aspect_ratio: number
   height: number
   iso_639_1: string
@@ -93,16 +93,16 @@ interface Image {
   width: number
 }
 
-interface Genre {
+type TGenre = {
   id: number
   name: string
 }
 
-interface Credits {
-  cast: Media[]
+type TCredits = {
+  cast: TMedia[]
 }
 
-interface Query {
+type TQuery = {
   type: string,
   title: string,
   query: string

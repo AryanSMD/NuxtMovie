@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const props = defineProps<{
-    item: Movie,
+    item: TMovie,
     type: string
 }>()
 </script>
@@ -66,9 +66,11 @@ const props = defineProps<{
 
 
 <style scoped>
+@reference '~/assets/css/main.css';
+
 .lables {
     @apply
-    w-full flex items-center gap-2 md:gap-5 text-white text-opacity-60 text-[1rem]
+    w-full flex items-center gap-2 md:gap-5 text-white/60 text-[1rem]
 }
 .item {
     @apply

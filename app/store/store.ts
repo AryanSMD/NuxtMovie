@@ -1,9 +1,9 @@
-interface States {
+type TStates = {
     title: string
 }
 
 export const useStore = defineStore('useStore', {
-    state: (): States => ({
+    state: (): TStates => ({
         title: 'Nuxt Movie'
     }),
     getters: {

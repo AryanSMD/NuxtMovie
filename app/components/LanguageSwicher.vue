@@ -11,7 +11,7 @@ const language  = computed({
 
 
 <template>
-    <select v-model="language" class="bg-transparent border-none outline-none cursor-pointer">
+    <select v-model="language" class="bg-black border-none outline-none cursor-pointer">
         <option    
             v-for="lang in locales" 
             :value="lang.code" 
@@ -21,11 +21,3 @@ const language  = computed({
         </option>
     </select>
 </template>
-
-
-<style scoped>
-select {
-    @apply
-    bg-black
-}
-</style>

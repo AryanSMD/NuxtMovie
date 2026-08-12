@@ -17,6 +17,8 @@ const props = defineProps<{
 
 
 <style scoped>
+@reference '~/assets/css/main.css';
+
 .item {
     @apply
     w-full gap-[5px] flex items-center justify-center

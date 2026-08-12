@@ -25,6 +25,8 @@ const { t, locale } = useI18n();
 
 
 <style scoped>
+@reference '~/assets/css/main.css';
+
 .label {
     background-color: rgb(0, 0, 0, .8);
     @apply

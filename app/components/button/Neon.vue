@@ -7,11 +7,13 @@ const props = defineProps<{
 
 
 <template>
-    <nuxt-link class="btn" :to="props.path">{{ props.title }}</nuxt-link>
+    <NuxtLink class="btn" :to="props.path">{{ props.title }}</NuxtLink>
 </template>
 
 
 <style scoped>
+@reference '~/assets/css/main.css';
+
 .btn {
     box-shadow: 
         1px 1px 5px var(--primary),
@@ -23,8 +25,8 @@ const props = defineProps<{
     text-shadow: 
         0 0 15px var(--primary);
     @apply
-    bg-transparent hover:bg-primary hover:text-black text-primary border-[3px] border-primary w-[70px]
-    lg:w-[100px] h-[40px] lg:h-[60px] flex justify-center items-center rounded-md cursor-pointer 
+    bg-transparent hover:bg-primary hover:text-black text-primary border-[3px] border-primary w-17.5
+    lg:w-25 h-10 lg:h-15 flex justify-center items-center rounded-md cursor-pointer 
     transition-all duration-300 relative font-medium hover:animate-none text-[.7rem] lg:text-[1.2rem]
 }
 .btn::after {
@@ -35,7 +37,7 @@ const props = defineProps<{
         scale(1.3, .5);
     filter: blur(10px);
     @apply
-    absolute left-0 bg-primary bottom-[-30px] lg:bottom-[-45px] h-[25px] lg:h-[40px] w-[70px] lg:w-[100px] 
+    absolute left-0 bg-primary -bottom-7.5 lg:-bottom-11.25 h-6.25 lg:h-10 w-17.5 lg:w-25
     opacity-40 pointer-events-none transition-opacity duration-300
 }
 .btn:hover::after {

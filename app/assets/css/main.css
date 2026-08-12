@@ -1,13 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-    --primary: #00FF00;
-    --secondary: #666666;
-    --tertiary: #292929;
-    --text: #F5F5F5;
-}
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./typography.css";
 
 * {
     @apply
@@ -15,9 +8,8 @@
 }
 
 body {
-    font-family: Roboto;
     @apply
-    text-[1rem] lg:text-[1.4rem] 2xl:text-[1.7rem]
+    text-[1rem] lg:text-[1.4rem] 2xl:text-[1.7rem] font-roboto
 }
 
 input {

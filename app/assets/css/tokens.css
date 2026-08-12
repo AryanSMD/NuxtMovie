@@ -1,0 +1,8 @@
+@theme {
+    --color-primary: #00FF00;
+    --color-secondary: #666666;
+    --color-tertiary: #292929;
+    --color-text: #F5F5F5;
+
+    --font-roboto: Roboto;
+}

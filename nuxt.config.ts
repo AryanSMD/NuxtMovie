@@ -1,18 +1,18 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
-  css: ['./assets/css/style.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
   },
+  css: ['~/assets/css/main.css'],
   image: {
     domains: ['image.tmdb.org'],
     alias: {
-      '/img': 'https://image.tmdb.org/t/p/original'
+      '/img': process.env.ImageURL!
     },
   },
   i18n: {
@@ -21,7 +21,6 @@ export default defineNuxtConfig({
       fallbackLocale: 'en',
     },
     strategy: 'no_prefix',
-    lazy: true,
     defaultLocale: 'en',
     locales: [
       {
